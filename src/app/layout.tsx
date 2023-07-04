@@ -1,29 +1,36 @@
 import './globals.css'
 import Navbar from './ui/navbar'
 import Footer from './ui/footer'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const projectName = 'Doku'
 
 export const metadata = {
-  title: 'Doku',
-  description: 'nextgen documentation platform',
+    title: projectName,
+    description: 'nextgen documentation platform',
+}
+
+export const navState = {
+    currentDoc: 'index.md',
+    currentSection: '',
 }
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode
 }) {
-  const fontFamily = 'IBM Plex Mono, monospace'
-  return (
-    <html lang="en">
-      {/* <body className={inter.className}>{children}</body> */}
-      <body>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
-  )
+    const currentDoc = 'index.md'
+    return (
+        <html lang="en">
+            <body className='bg-slate-50'>
+                <Navbar
+                    projectName={projectName}
+                    currentDoc={navState.currentDoc}
+                    currentSection={navState.currentSection}
+                />
+                {children}
+                <Footer />
+            </body>
+        </html>
+    )
 }
