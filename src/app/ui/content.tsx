@@ -12,7 +12,7 @@ interface ContentProps {
 
 export default function Content({ markdown }: ContentProps) {  
     return (
-        <article className="prose">
+        <article className="prose prose-md">
             <ReactMarkdown remarkPlugins={[remarkGfm]} children={markdown} />
         </article>
     );
