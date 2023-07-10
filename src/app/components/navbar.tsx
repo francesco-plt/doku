@@ -3,10 +3,9 @@ import { ibmPlexMono, montserrat } from '../fonts';
 interface NavBarProps {
     projectName: string;
     currentDoc: string;
-    currentSection: string;
 }
 
-export default function Navbar({ projectName, currentDoc, currentSection }: NavBarProps) {
+export default function Navbar({ projectName, currentDoc }: NavBarProps) {
     return (
         <header className="flex flex-row justify-between p-4 w-screen h-32">
             {/* doku logo, removed for now */}
@@ -28,14 +27,14 @@ export default function Navbar({ projectName, currentDoc, currentSection }: NavB
                         <span className="text-gray-400">/</span>
                         &nbsp;
                         <span className="text-gray-400 hover:text-gray-600">{currentDoc}</span>
-                        {currentSection && (
+                        {/* {currentSection && (
                             <>
                             &nbsp;
                             <span className="text-gray-400">/</span>
                             &nbsp;
                             <span className="text-gray-400 hover:text-gray-600">{currentSection}</span>
                             </>
-                        )}
+                        )} */}
                     </span>
                 </div>  
             </div>

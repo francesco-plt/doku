@@ -8,10 +8,6 @@ This page shows a preview of the markdown features that are supported.
 ##### h5 Heading
 ###### h6 Heading
 
-
-## Horizontal Rule
----
-
 ## Emphasis
 
 **This is bold text**

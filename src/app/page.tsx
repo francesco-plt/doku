@@ -1,22 +1,40 @@
+import { metadata } from './layout';
+import Navbar from './components/navbar';
+import Footer from './components/footer';
 import { ibmPlexMono } from './fonts';
-import Content from './ui/content';
-import Sidebar from './ui/sidebar';
-import { readFileSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+import Link from 'next/link';
 
-export default function Home() {
-    // read the docs/index.md file
-    const filePath = `${process.cwd()}/docs/index.md`;
-    const markdown = readFileSync(filePath, 'utf8');
+// retrieve file list from localhost:3000/api/docs
+async function getFileList(): Promise<string[]> {
+    try {
+      const response = await fetch('http://localhost:3001/api/docs', { cache: 'no-store' });
+      const data = await response.json();
+      return data.fileNames as string[];
+    } catch (err) {
+      console.error(err);
+      return [];
+    }
+}
+
+export default async function Home() {
+    const fileNames = await getFileList();
     return (
-        <div className="flex flex-row justify-center p-4 w-screen">
-            <div className="w-1/4 flex flex-col items-center p-4">
-                <Sidebar/>
-            </div>
-            <div className="w-3/4 flex flex-col items-center p-4">
-                <span className={ibmPlexMono.className}>
-                    <Content markdown={markdown} />
-                </span>
-            </div>
+        <>
+        <div>
+            <h1 className="text-4xl font-bold">Hello world</h1>
+            <p className="text-2xl font-semibold">This is a test page</p>
+            {fileNames.length === 0 && <p>no files</p>}
+            {fileNames.map((fileName) => {
+                return (
+                    <>
+                    <Link href={`/${fileName}`}>{fileName}</Link>
+                    <br />
+                    </>
+                );
+            })}
         </div>
+        </>
     );
 }

@@ -1,18 +1,10 @@
 import './globals.css'
-import Navbar from './ui/navbar'
-import Footer from './ui/footer'
-
-const projectName = 'd0ku'
+import Navbar from './components/navbar'
+import Footer from './components/footer'
 
 export const metadata = {
-    title: projectName,
+    title: 'd0ku',
     description: 'weird documentation platform',
-}
-
-export const navState = {
-    projectName: projectName,
-    currentDoc: 'index.md',
-    currentSection: '',
 }
 
 export default function RootLayout({
@@ -22,14 +14,8 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className='bg-slate-50'>
-                <Navbar
-                    projectName={navState.projectName}
-                    currentDoc={navState.currentDoc}
-                    currentSection={navState.currentSection}
-                />
+            <body className='bg-slate-50 h-screen'>
                 {children}
-                <Footer />
             </body>
         </html>
     )
