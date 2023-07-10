@@ -1,6 +1,4 @@
 import './globals.css'
-import Navbar from './components/navbar'
-import Footer from './components/footer'
 
 export const metadata = {
     title: 'd0ku',
@@ -14,7 +12,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className='bg-slate-50 h-screen'>
+            <body className='flex flex-col h-full bg-sky-50 dark:bg-sky-900 text-sky-850 dark:text-sky-50'>
                 {children}
             </body>
         </html>
