@@ -28,14 +28,6 @@ export default function Header({ documentId }: HeaderProps) {
                         <span className="text-sky-400 dark:text-sky-200">/</span>
                         &nbsp;
                         <span className="text-sky-400 dark:text-sky-200">{documentId}</span>
-                        {/* {currentSection && (
-                            <>
-                            &nbsp;
-                            <span className="text-sky-400">/</span>
-                            &nbsp;
-                            <span className="text-sky-400 hover:text-gray-600">{currentSection}</span>
-                            </>
-                        )} */}
                     </span>
                 </div>  
             </div>

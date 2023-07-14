@@ -22,11 +22,15 @@ export default async function DocumentContent({ params }: { params: { id: string
         <>
         <Header documentId={id}/>
         <div className="flex flex-row justify-center">
+            {fileContent !== "" && 
             <div className="w-1/4 flex flex-col items-center p-4">
                 <Sidebar/>
-            </div>
-            <div className="w-3/4 flex flex-col items-center p-4">
-                {fileContent === "" && <p>This file is empty...</p>}
+            </div>}
+            <div className="flex flex-col items-center p-4">
+                {fileContent === "" && <>
+                    <p className={ibmPlexMono.className}>This file is empty...</p>
+                    <p className={ibmPlexMono.className}>Probably the backend is down</p>
+                </>}
                 <article className="prose prose-md dark:prose-invert">
                     <span className={ibmPlexMono.className}>
                         <ReactMarkdown remarkPlugins={[remarkGfm]} children={fileContent} />
@@ -34,7 +38,6 @@ export default async function DocumentContent({ params }: { params: { id: string
                 </article>
             </div>
         </div>
-        <div className='flex-grow'></div>
         </>
     );
 }
