@@ -33,3 +33,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# misc doc source
+docs/*.md
+# docs whitelist
+!docs/index.md
+!docs/page1.md
