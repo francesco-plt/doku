@@ -27,7 +27,7 @@ export default async function DocumentContent({ params }: { params: { id: string
         {/* <Header documentId={id}/> */}
         <div className="flex flex-row justify-center py-12">
             {fileContent !== "" && 
-            <div className="w-1/4 flex flex-col items-center px-4">
+            <div className="w-1/4 flex flex-col items-center pl-8 pr-4">
                 <Prompt documentId={id}/>
                 <Sidebar/>
             </div>}

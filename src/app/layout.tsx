@@ -2,7 +2,7 @@ import './globals.css'
 
 export const metadata = {
     title: 'd0ku',
-    description: 'weird documentation platform',
+    description: 'weird looking documentation platform',
 }
 
 export default function RootLayout({

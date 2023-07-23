@@ -16,8 +16,8 @@ async function getFileList(): Promise<string[]> {
 export default async function Sidebar() {
     const fileNames = await getFileList();
   return (
-    <div className="px-8 flex flex-col items-center">
-        <div className="px-4"></div>
+    <div className="flex flex-col items-center">
+        <div className="px-2"></div>
         <ul>
             {fileNames != undefined && fileNames.map((fileName) => (
                 <li key={fileName}>
