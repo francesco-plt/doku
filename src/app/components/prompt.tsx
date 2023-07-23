@@ -8,7 +8,7 @@ interface PromptProps {
 
 export default function Prompt({ documentId }: PromptProps) {
     return (
-        <div className='pl-2 pb-2 text-left w-full'>
+        <div className='text-left px-2 pb-2 w-full'>
             <p className=' font-medium'>
                 <span className={ibmPlexMono.className}>
                     <Link href="/" className="hover:text-emerald-600">{metadata.title}</Link>

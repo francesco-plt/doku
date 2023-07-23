@@ -24,14 +24,13 @@ export default async function DocumentContent({ params }: { params: { id: string
     const fileContent: string = await getDocumentContent(id);
     return (
         <>
-        {/* <Header documentId={id}/> */}
         <div className="flex flex-row justify-center py-12">
             {fileContent !== "" && 
-            <div className="w-1/4 flex flex-col items-center pl-8 pr-4">
+            <div className="w-1/3 grow flex flex-col items-center pl-8 pr-4">
                 <Prompt documentId={id}/>
                 <Sidebar/>
             </div>}
-            <div className="w-3/4 flex flex-col items-center px-4">
+            <div className="w-2/3 flex flex-col items-center px-4 pr-8">
                 {fileContent === "" && <>
                     <p className={ibmPlexMono.className}>This file is empty...</p>
                     <p className={ibmPlexMono.className}>Probably the backend is down</p>
