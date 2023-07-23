@@ -1,5 +1,8 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+import 'katex/dist/katex.min.css'
 import Sidebar from '../components/sidebar';
 import Header from '../components/header';
 import { ibmPlexMono } from '../fonts';
@@ -34,7 +37,7 @@ export default async function DocumentContent({ params }: { params: { id: string
                 {/* <article className="prose prose-md prose-p:text-green-400 prose-headings:text-green-200"> */}
                 <article className="prose prose-md">
                     <span className={ibmPlexMono.className}>
-                        <ReactMarkdown remarkPlugins={[remarkGfm]} children={fileContent} />
+                        <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} children={fileContent} />
                     </span>
                 </article>
             </div>
