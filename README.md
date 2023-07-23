@@ -10,7 +10,11 @@ The backend is deployed via a simple OOP Express server, while the fronted consi
 
 ## Getting Started
 
-First, run the backend server:
+First of all you need to follow those steps:
+1. Add some source markdown files to the `./docs` folder. You must add a `index.md` file which will represent the homepage of your wiki.
+2. Now you need to define a title for your project by editing the `metadata` object located at `./src/app/layout.tsx`.
+
+Now you need to install dependencies (`$ npm i`) and run the backend server:
 
 ``` bash
 npx tsc backend/app.ts --esModuleInterop && node backend/app.js
