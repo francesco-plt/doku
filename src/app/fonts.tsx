@@ -6,7 +6,7 @@ import {
 export const ibmPlexMono = IBM_Plex_Mono({
     subsets: ['latin'],
     style: 'normal',
-    weight: '400',
+    weight: ['200', '300', '400', '500', '600', '700'],
     display: 'swap'
 });
 

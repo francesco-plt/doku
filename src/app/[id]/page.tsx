@@ -5,6 +5,7 @@ import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 import Sidebar from '../components/sidebar';
 import Header from '../components/header';
+import Prompt from '../components/prompt';
 import { ibmPlexMono } from '../fonts';
 
 async function getDocumentContent(id: string): Promise<string> {
@@ -23,10 +24,11 @@ export default async function DocumentContent({ params }: { params: { id: string
     const fileContent: string = await getDocumentContent(id);
     return (
         <>
-        <Header documentId={id}/>
-        <div className="flex flex-row justify-center">
+        {/* <Header documentId={id}/> */}
+        <div className="flex flex-row justify-center py-12">
             {fileContent !== "" && 
             <div className="w-1/4 flex flex-col items-center px-4">
+                <Prompt documentId={id}/>
                 <Sidebar/>
             </div>}
             <div className="w-3/4 flex flex-col items-center px-4">

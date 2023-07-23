@@ -15,11 +15,11 @@ export default function Header({ documentId }: HeaderProps) {
             <div className="flex items-center justify-center">
                 <div className="flex flex-row text-lg">
                     <span className={ibmPlexMono.className}>
-                        <Link href="/" className="text-green-400 hover:text-green-600">{metadata.title}</Link>
+                        <Link href="/" className="hover:text-emerald-600">{metadata.title}</Link>
                         &nbsp;
-                        <span className="text-green-400 dark:text-sky-200">/</span>
+                        <span className="dark:text-sky-200">/</span>
                         &nbsp;
-                        <span className="text-green-400 dark:text-sky-200">{documentId}</span>
+                        <span className="dark:text-sky-200">{documentId}</span>
                     </span>
                 </div>  
             </div>
