@@ -23,15 +23,16 @@ export default async function DocumentContent({ params }: { params: { id: string
         <Header documentId={id}/>
         <div className="flex flex-row justify-center">
             {fileContent !== "" && 
-            <div className="w-1/4 flex flex-col items-center p-4">
+            <div className="w-1/4 flex flex-col items-center px-4">
                 <Sidebar/>
             </div>}
-            <div className="flex flex-col items-center p-4">
+            <div className="w-3/4 flex flex-col items-center px-4">
                 {fileContent === "" && <>
                     <p className={ibmPlexMono.className}>This file is empty...</p>
                     <p className={ibmPlexMono.className}>Probably the backend is down</p>
                 </>}
-                <article className="prose prose-md dark:prose-invert">
+                {/* <article className="prose prose-md prose-p:text-green-400 prose-headings:text-green-200"> */}
+                <article className="prose prose-md">
                     <span className={ibmPlexMono.className}>
                         <ReactMarkdown remarkPlugins={[remarkGfm]} children={fileContent} />
                     </span>

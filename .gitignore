@@ -34,8 +34,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# misc doc source
+# doc source
 docs/*.md
-# docs whitelist
 !docs/index.md
 !docs/page1.md
+
+# backend
+backend/app.js

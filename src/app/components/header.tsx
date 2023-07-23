@@ -8,26 +8,18 @@ interface HeaderProps {
 
 export default function Header({ documentId }: HeaderProps) {
     return (
-        <header className="flex flex-row justify-between p-4 w-screen h-32">
-            {/* doku logo, removed for now */}
-            <div className="flex items-center justify-center text-xl p-4">
-                {/* <span className={montserrat.className}>
-                    <span className="text-gray-500 hover:text-gray-800">do</span>
-                    &nbsp;
-                    <span className="text-gray-500">/</span>
-                    &nbsp;
-                    <span className="text-sky-400 hover:text-gray-600">ku</span>
-                </span> */}
-            </div>
+        <header className="flex flex-row justify-between px-4 w-screen h-24">
+            {/* spacer for justify between */}
+            <div className='p-4'></div>
             {/* path like header bar */}
-            <div className="flex items-center justify-center p-4">
+            <div className="flex items-center justify-center">
                 <div className="flex flex-row text-lg">
                     <span className={ibmPlexMono.className}>
-                        <Link href="/" className="text-sky-400 hover:text-sky-600 dark:text-sky-200 dark:hover:text-sky-50">{metadata.title}</Link>
+                        <Link href="/" className="text-green-400 hover:text-green-600">{metadata.title}</Link>
                         &nbsp;
-                        <span className="text-sky-400 dark:text-sky-200">/</span>
+                        <span className="text-green-400 dark:text-sky-200">/</span>
                         &nbsp;
-                        <span className="text-sky-400 dark:text-sky-200">{documentId}</span>
+                        <span className="text-green-400 dark:text-sky-200">{documentId}</span>
                     </span>
                 </div>  
             </div>

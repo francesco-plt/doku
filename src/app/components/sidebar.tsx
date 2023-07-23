@@ -22,7 +22,7 @@ export default async function Sidebar() {
                 <li key={fileName}>
                     <img src="/file_lines.png" className="inline-block object-scale-down px-2 pb-1 h-6" />
                     <span className={ibmPlexMono.className}>
-                    <Link href={`/${fileName}`} className='hover:text-sky-800 dark:hover:text-sky-200'>
+                    <Link href={`/${fileName}`} className='hover:text-green-600'>
                         {fileName}
                     </Link>
                     </span>
